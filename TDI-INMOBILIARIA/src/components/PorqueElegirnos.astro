@@ -1,0 +1,181 @@
+---
+const features = [
+  {
+    icon: "bi bi-building-check",
+    title: "Experiencia Comprobada",
+    description: "Más de 10 años en el mercado inmobiliario, con un historial de proyectos exitosos y clientes satisfechos."
+  },
+  {
+    icon: "bi bi-shield-check",
+    title: "Garantía de Calidad",
+    description: "Trabajamos con los más altos estándares de calidad y cumplimos con todas las normativas vigentes."
+  },
+  {
+    icon: "bi bi-people-fill",
+    title: "Equipo Multidisciplinario",
+    description: "Contamos con profesionales especializados en arquitectura, derecho, ingeniería y corretaje inmobiliario."
+  },
+  {
+    icon: "bi bi-graph-up-arrow",
+    title: "Inversión Segura",
+    description: "Asesoramiento experto para maximizar el valor de tu inversión inmobiliaria."
+  }
+];
+---
+
+<section class="why-choose-us py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold custom-title-color mb-2 fade-in-up">¿Por qué elegirnos?</h2>
+    <div class="title-underline custom-underline-color fade-in-up mb-5"></div>
+
+    <div class="row g-4">
+      {
+        features.map((feature, index) => (
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100 fade-in-up" data-delay={index * 200}>
+              <div class="text-center mb-4">
+                <div class="icon-wrapper">
+                  <i class={`${feature.icon}`}></i>
+                </div>
+              </div>
+              <h3 class="h4 text-center mb-3">{feature.title}</h3>
+              <p class="text-center mb-0">{feature.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-choose-us {
+    background-color: #fff;
+  }
+
+  .custom-title-color {
+    color: #003B73 !important;
+  }
+
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: #003B73;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .title-underline.custom-underline-color::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #003B73;
+    right: -50px;
+    opacity: 0.5;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  }
+
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: #fff5f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .icon-wrapper i {
+    font-size: 2rem;
+    color: #ff5630;
+  }
+
+  .feature-card:hover .icon-wrapper {
+    transform: scale(1.1);
+    background-color: #ff5630;
+  }
+
+  .feature-card:hover .icon-wrapper i {
+    color: white !important;
+  }
+
+  .feature-card h3 {
+    color: #003B73;
+    font-weight: 600;
+  }
+
+  .feature-card p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 767px) {
+    .feature-card {
+      padding: 2rem;
+    }
+    .feature-card p {
+      font-size: 1rem;
+    }
+    .icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+    .icon-wrapper i {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const el = entry.target as HTMLElement;
+          if (el.dataset.delay) {
+            el.style.transitionDelay = `${el.dataset.delay}ms`;
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>

@@ -1,0 +1,346 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Nosotros - TDI Inmobiliaria";
+const description = "TDI Inmobiliaria: expertos en corretaje, administración, arquitectura, servicios legales y obras civiles para gestionar y potenciar tu propiedad.";
+
+// Imágenes de ejemplo (URLs ficticias)
+const urlHeroBg = "https://ficticia.com/img/hero-nosotros-inmobiliaria.jpg";
+const urlTeam = "https://ficticia.com/img/equipo-inmobiliario.jpg";
+
+const valores = [
+  {icon: 'bi-award', title: 'Excelencia'},
+  {icon: 'bi-people', title: 'Compromiso'},
+  {icon: 'bi-shield-check', title: 'Transparencia'},
+  {icon: 'bi-lightbulb', title: 'Innovación'}
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="hero-section" style={`background-image: url('${urlHeroBg}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content animate">
+        <h1>Conoce TDI Inmobiliaria</h1>
+        <p>Gestionamos todas las etapas de tu propiedad: corretaje, administración, arquitectura, servicios legales y obras civiles.</p>
+        <a href="/servicios" class="btn-primary">Descubre nuestros servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="story-section animate">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-content">
+          <h2>Nuestra Historia</h2>
+          <p>
+            Con más de 15 años en el mercado inmobiliario, TDI Inmobiliaria ha acompañado a cientos de clientes en la compra, venta, arriendo, remodelación y legalización de sus propiedades. Nuestro enfoque integral garantiza que cada proyecto se desarrolle con transparencia, eficiencia y la máxima calidad.
+          </p>
+        </div>
+        <div class="story-image">
+          <img src={urlTeam || "/placeholder.svg"} alt="Equipo Inmobiliario" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision-section animate">
+    <div class="container">
+      <div class="mission-vision-grid">
+        <div class="mission-box">
+          <h3>Misión</h3>
+          <p>
+            Brindar soluciones integrales en bienes raíces, combinando experiencia comercial, técnica y legal, para maximizar el valor y la seguridad de las propiedades de nuestros clientes.
+          </p>
+        </div>
+        <div class="vision-box">
+          <h3>Visión</h3>
+          <p>
+            Ser la inmobiliaria de referencia en Chile, reconocida por nuestra gestión integral, innovación y compromiso con la excelencia en cada proyecto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values-section animate">
+    <div class="container">
+      <h2>Nuestros Valores</h2>
+      <div class="values-grid">
+        {valores.map((valor) => (
+          <div class="value-card">
+            <i class={valor.icon}></i>
+            <h4>{valor.title}</h4>
+            <p>Nuestro pilar de trabajo y relación con clientes y colaboradores.</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* General Styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: 5rem 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #ff5630;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #d84315;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Story Section */
+  .story-section {
+    background-color: #f8f9fa;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .story-content h2 {
+    color: #333;
+  }
+
+  .story-content p {
+    text-align: justify;
+  }
+
+  .story-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+
+  /* Mission & Vision Section */
+  .mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .mission-box, .vision-box {
+    padding: 2.5rem;
+    border-radius: 10px;
+    height: 100%;
+  }
+
+  .mission-box {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .vision-box {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .mission-box h3, .vision-box h3 {
+    color: #ff5630;
+    margin-bottom: 1rem;
+  }
+
+  .mission-box p, .vision-box p {
+    text-align: justify;
+    margin-bottom: 0;
+  }
+
+  /* Values Section */
+  .values-section {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .value-card {
+    background-color: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .value-card i {
+    font-size: 2.5rem;
+    color: #ff5630;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-card h4 {
+    margin-bottom: 1rem;
+  }
+
+  .value-card p {
+    margin-bottom: 0;
+  }
+
+  /* Animation */
+  .animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .story-grid, .mission-vision-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .story-image {
+      order: -1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>

@@ -1,0 +1,229 @@
+---
+import Proveedores from '../assets/img/busqueda-proveedores.jpg';
+import Transporte from '../assets/img/busqueda-transporte.jpg';
+import Internacion from '../assets/img/busqueda-asesor.jpg';
+import Externalizacion from '../assets/img/busqueda-externalizacion.jpg';
+import HeroBackground from '../assets/img/hero-background.jpg'; // Importa la imagen de fondo
+import Layout from '../layouts/Layout.astro';
+
+const title = "Arquitectura y Diseño - TDI Inmobiliaria";
+const description = "Transformamos espacios con creatividad, profesionalismo y pasión. Descubre cómo nuestro equipo de arquitectura puede hacer realidad tu proyecto, desde el diseño hasta la remodelación y construcción.";
+
+---
+<Layout title={title} description={description}>
+  <section class="hero-section d-flex align-items-center animate">
+    <div class="container hero-content text-center">
+      <h1 class="display-4 fw-bold mb-4">Arquitectura y Diseño</h1>
+      <p class="lead mb-4">Creamos espacios que inspiran, mejoran tu vida y aumentan el valor de tu propiedad.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn btn-primary btn-lg" onclick="window.location.href='/contacto'">
+          Solicitar Asesoría
+        </button>
+      </div>
+    </div>
+    <div class="hero-bg-img"></div>
+  </section>
+
+  <section class="section-padding bg-light animate">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">¿Por qué elegir nuestro equipo de arquitectura?</h2>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-brush text-primary me-2"></i>
+              Proyectos personalizados y creativos.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-house-door text-primary me-2"></i>
+              Experiencia en remodelación, ampliación y diseño de espacios.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-rulers text-primary me-2"></i>
+              Asesoría integral desde la idea hasta la ejecución.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-shield-check text-primary me-2"></i>
+              Cumplimiento normativo y respaldo profesional.
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Arquitectura y diseño" class="img-fluid rounded-3 shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding animate">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">¿Cómo trabajamos tu proyecto?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <h3 class="h5 fw-bold mb-3">Diseño y Creatividad</h3>
+            <p class="text-muted">Escuchamos tus ideas y las transformamos en propuestas innovadoras y funcionales.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-gear-wide-connected"></i> <!-- Gestión integral, procesos conectados -->
+            </div>
+            <h3 class="h5 fw-bold mb-3">Planificación y Gestión</h3>
+            <p class="text-muted">Elaboramos planos, renders y gestionamos permisos para que tu proyecto avance sin sorpresas.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-building"></i>
+            </div>
+            <h3 class="h5 fw-bold mb-3">Ejecución y Supervisión</h3>
+            <p class="text-muted">Supervisamos la obra y coordinamos a los especialistas para asegurar calidad y cumplimiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-light animate">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Galería de Proyectos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Remodelación de espacios" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Remodelación de espacios</h4>
+              <p class="mb-0 text-muted">Transformamos ambientes antiguos en lugares modernos y funcionales.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80" alt="Diseño arquitectónico" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Diseño arquitectónico</h4>
+              <p class="mb-0 text-muted">Creamos proyectos únicos, adaptados a tus necesidades y estilo de vida.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Supervisión de obra" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Supervisión de obra</h4>
+              <p class="mb-0 text-muted">Aseguramos calidad y cumplimiento en cada etapa de la construcción.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding animate">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">¿Listo para transformar tu espacio?</h2>
+      <p class="lead mb-4">Déjanos acompañarte en el diseño, remodelación o construcción de tu proyecto. ¡Hablemos!</p>
+      <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section-padding {
+    padding: 3rem 0;
+  }
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 2rem 0;
+    }
+  }
+  .hero-section {
+    background: linear-gradient(135deg, #1976d2 0%, #63a4ff 100%);
+    position: relative;
+    min-height: 55vh;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+  }
+  .hero-bg-img {
+    background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .feature-card {
+    background: #fff;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 24px rgba(0,59,115,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(255,86,48,0.13);
+  }
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ff5630;
+    margin-bottom: 1rem;
+  }
+  .gallery-card {
+    background: #fff;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 24px rgba(0,59,115,0.07);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .gallery-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+  }
+  .gallery-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(255,86,48,0.13);
+  }
+  .btn-primary {
+    background: #ff5630;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 18px rgba(255,86,48,0.13);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    background: #d84315;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(255,86,48,0.18);
+  }
+</style>

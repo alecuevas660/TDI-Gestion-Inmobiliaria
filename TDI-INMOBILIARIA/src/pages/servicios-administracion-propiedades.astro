@@ -1,0 +1,223 @@
+---
+import Layout from "../layouts/Layout.astro";
+const title = "Administración de Propiedades - TDI Inmobiliaria";
+const description = "Gestión profesional y transparente de tu propiedad. Nos encargamos de todo: arriendo, mantención, cobros y más. Vive tranquilo, tu inversión está en buenas manos.";
+---
+
+<Layout title={title} description={description}>
+  <section class="hero-section d-flex align-items-center animate">
+    <div class="container hero-content text-center">
+      <h1 class="display-4 fw-bold mb-4">Administración de Propiedades</h1>
+      <p class="lead mb-4">Tu propiedad, nuestra responsabilidad. Nos ocupamos de todo para que vivas tranquilo.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn btn-primary btn-lg" onclick="window.location.href='/contacto'">
+          Solicitar Asesoría
+        </button>
+      </div>
+    </div>
+    <div class="hero-bg-img"></div>
+  </section>
+
+  <section class="section-padding bg-light animate">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">¿Por qué confiar la administración a TDI?</h2>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-person-badge-fill text-primary me-2"></i>
+              Gestión integral y transparente de tu propiedad.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-cash-coin text-primary me-2"></i>
+              Cobro de arriendos y pagos puntuales garantizados.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-tools text-primary me-2"></i>
+              Supervisión de mantenciones y reparaciones.
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-shield-check text-primary me-2"></i>
+              Protección legal y respaldo en todo momento.
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Administración de propiedades" class="img-fluid rounded-3 shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding animate">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">¿Cómo administramos tu propiedad?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-clipboard-check"></i>
+            </div>
+            <h3 class="h5 fw-bold mb-3">Selección y Contrato</h3>
+            <p class="text-muted">Buscamos y seleccionamos arrendatarios responsables. Redactamos y firmamos contratos claros y seguros.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+            <h3 class="h5 fw-bold mb-3">Cobro y Gestión</h3>
+            <p class="text-muted">Nos encargamos del cobro mensual, pagos de servicios y gestión de morosidad.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card card border-0 h-100 text-center p-4">
+            <div class="icon-circle mb-4 mx-auto">
+              <i class="bi bi-house-gear"></i>
+            </div>
+            <h3 class="h5 fw-bold mb-3">Mantención y Reportes</h3>
+            <p class="text-muted">Supervisamos mantenciones, gestionamos reparaciones y te enviamos reportes periódicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-light animate">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Galería de la Administración</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Inspección de propiedad" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Inspección y entrega</h4>
+              <p class="mb-0 text-muted">Verificamos el estado de tu propiedad antes y después de cada arriendo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Mantenimiento y reparaciones" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Mantenimiento y reparaciones</h4>
+              <p class="mb-0 text-muted">Nos ocupamos de que todo funcione bien y tu inversión se mantenga en óptimas condiciones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-card h-100">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Comunicación y reportes" class="img-fluid rounded-top">
+            <div class="p-3">
+              <h4 class="fw-bold mb-2">Comunicación y reportes</h4>
+              <p class="mb-0 text-muted">Te mantenemos informado con reportes claros y comunicación directa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding animate">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">¿Quieres una administración sin preocupaciones?</h2>
+      <p class="lead mb-4">Confía en nuestro equipo y disfruta de tu inversión. Nos encargamos de todo por ti.</p>
+      <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section-padding {
+    padding: 3rem 0;
+  }
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 2rem 0;
+    }
+  }
+  .hero-section {
+    background: linear-gradient(135deg, #1976d2 0%, #63a4ff 100%);
+    position: relative;
+    min-height: 55vh;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+  }
+  .hero-bg-img {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .feature-card {
+    background: #fff;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 24px rgba(0,59,115,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(255,86,48,0.13);
+  }
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ff5630;
+    margin-bottom: 1rem;
+  }
+  .gallery-card {
+    background: #fff;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 24px rgba(0,59,115,0.07);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .gallery-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+  }
+  .gallery-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(255,86,48,0.13);
+  }
+  .btn-primary {
+    background: #ff5630;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 18px rgba(255,86,48,0.13);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    background: #d84315;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(255,86,48,0.18);
+  }
+</style>

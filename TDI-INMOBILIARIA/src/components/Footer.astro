@@ -1,0 +1,347 @@
+---
+const currentYear = new Date().getFullYear();
+import logo from '../assets/img/logo.png';
+---
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <!-- Logo y Descripción -->
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 footer-col">
+          <div class="footer-brand-navbar-style">
+            <div class="footer-logo-main">
+              <img src={logo.src} alt="Logo TDI Gestión Inmobiliaria" class="footer-logo-img-navbar" />
+              <span class="footer-logo-text-navbar">TDI</span>
+            </div>
+            <span class="footer-logo-subtext-navbar">Gestión Inmobiliaria</span>
+            <p class="brand-description">
+              Tu socio confiable en el mercado inmobiliario, ofreciendo soluciones integrales para compra, venta, arriendo y administración de propiedades.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Enlaces Rápidos -->
+        <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 footer-col">
+          <div class="footer-links">
+            <h3 class="footer-title">Enlaces</h3>
+            <ul>
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/servicios">Servicios</a></li>
+              <li><a href="/propiedades">Propiedades</a></li>
+              <li><a href="/nosotros">Nosotros</a></li>
+              <li><a href="/contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Servicios -->
+        <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 footer-col">
+          <div class="footer-links">
+            <h3 class="footer-title">Servicios</h3>
+            <ul>
+              <li><a href="/servicios/corretaje">Corretaje y Administración</a></li>
+              <li><a href="/servicios/arquitectura">Arquitectura</a></li>
+              <li><a href="/servicios/legales">Servicios Legales</a></li>
+              <li><a href="/servicios/obras">Obras Civiles</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Contacto -->
+        <div class="col-lg-3 col-md-4 footer-col">
+          <div class="footer-contact">
+            <h3 class="footer-title">Contacto</h3>
+            <ul>
+              <li><i class="bi bi-clock"></i><span>Lun - Vie: 9:00AM - 18:00PM</span></li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+56953352667">+56 9 5335 2667</a></li>
+              <li><i class="bi bi-envelope"></i><a href="mailto:contacto@tdiinmobiliaria.cl">contacto@tdiinmobiliaria.cl</a></li>
+              <li><i class="bi bi-geo-alt"></i><span>Santiago, Chile</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-separator"></div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          &copy; {currentYear} TDI Inmobiliaria. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #003B73;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #2a7cf7, #1fd1c7);
+    z-index: 2;
+  }
+  .footer-top {
+    padding: 4rem 0 2.5rem 0;
+    position: relative;
+    z-index: 3;
+  }
+  .footer-col {
+    border-right: 1px solid rgba(42,124,247,0.10);
+    height: 100%;
+  }
+  .footer-col:last-child {
+    border-right: none;
+  }
+  .footer-separator {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #2a7cf7, #1fd1c7);
+    opacity: 0.18;
+    margin: 0 auto;
+  }
+  .footer-brand-navbar-style {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .footer-logo-main {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.2rem;
+    margin-bottom: 0.1rem;
+  }
+  .footer-logo-img-navbar {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    display: block;
+    position: static;
+  }
+  .footer-logo-text-navbar {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #1fd1c7 0%, #2a7cf7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-left: 0.2rem;
+    line-height: 1;
+  }
+  .footer-logo-subtext-navbar {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #b3e0f7;
+    margin-top: 0.1rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.1rem;
+    line-height: 1.1;
+  }
+  .brand-description {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin-bottom: 1.7rem;
+    max-width: 350px;
+  }
+  .footer-title {
+    color: #fff;
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.01em;
+    position: relative;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #2a7cf7 0%, #1fd1c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38px;
+    height: 2.5px;
+    background: #1fd1c7;
+    border-radius: 2px;
+    opacity: 0.7;
+  }
+  .footer-links ul,
+  .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li,
+  .footer-contact li {
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .footer-links a,
+  .footer-contact a {
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: inline-block;
+    position: relative;
+  }
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: #1fd1c7;
+    background: linear-gradient(90deg, #2a7cf7 0%, #1fd1c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(4px) scale(1.04);
+  }
+  .footer-contact i {
+    color: #1fd1c7;
+    font-size: 1.25rem;
+    min-width: 1.5em;
+    text-align: center;
+  }
+  .social-links {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+  .social-link {
+    color: #fff;
+    background: #2a7cf7;
+    font-size: 1.25rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 8px rgba(42,77,110,0.07);
+    border: 1.5px solid transparent;
+  }
+  .social-link:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #2a7cf7 0%, #1fd1c7 100%);
+    border-color: #1fd1c7;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 4px 16px rgba(31,209,199,0.13);
+  }
+  .footer-bottom {
+    background: rgba(42,124,247,0.13);
+    padding: 1.2rem 0 1.1rem 0;
+    z-index: 3;
+    position: relative;
+  }
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .copyright {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.01rem;
+    margin: 0;
+    font-weight: 400;
+  }
+  .footer-bottom-links {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    font-size: 1.01rem;
+  }
+  .footer-bottom-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-bottom-links a:hover {
+    color: #1fd1c7;
+    background: linear-gradient(90deg, #2a7cf7 0%, #1fd1c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .footer-divider {
+    color: #1fd1c7;
+    opacity: 0.7;
+    font-size: 1.2em;
+    margin: 0 0.3em;
+    user-select: none;
+  }
+  @media (max-width: 991px) {
+    .footer-top {
+      padding: 2.5rem 0 1.5rem 0;
+    }
+    .footer-col {
+      border-right: none;
+      margin-bottom: 2rem;
+    }
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.7rem;
+    }
+    .footer-bottom-links {
+      justify-content: center;
+    }
+    .social-links {
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 767px) {
+    .footer-top {
+      padding: 2rem 0 1rem 0;
+    }
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.7rem;
+    }
+    .footer-bottom-links {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .footer-col {
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo-text-navbar {
+      font-size: 1.4rem;
+    }
+    .footer-title {
+      font-size: 1rem;
+    }
+  }
+</style>

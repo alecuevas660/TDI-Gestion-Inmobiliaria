@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomeBanner from '../components/HomeBanner.astro';
+import ServiciosHome from '../components/ServiciosHome.astro';
+import ComoTrabajamos from "../components/ComoTrabajamos.astro";
+import PorqueElegirnos from "../components/PorqueElegirnos.astro";
+import Contacto from "../components/Contacto.astro"
+import Galeria from '../components/Galeria.astro';
+const title = "Inicio | TDI Gestión Inmobiliaria"
+const description = "Conecta Internacional es una empresa emergente en comercio exterior que ofrece soluciones integrales en logística, importaciones y exportaciones para impulsar el crecimiento de tu negocio global.";
+
+---
+
+<Layout title={title} description={description}>
+	<HomeBanner />
+	<PorqueElegirnos />
+	<ServiciosHome />
+	<ComoTrabajamos />
+	<Galeria />
+	<Contacto />
+
+</Layout>

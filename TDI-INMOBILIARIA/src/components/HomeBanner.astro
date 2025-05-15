@@ -1,0 +1,346 @@
+---
+import banner from '../assets/img/Banner.jpg';
+import banner1 from '../assets/img/Banner1.jpg';
+import banner2 from '../assets/img/Banner2.jpg';
+import banner3 from '../assets/img/Banner3.jpg';
+import banner4 from '../assets/img/Banner4.jpg';
+import banner5 from '../assets/img/Banner5.jpg';
+---
+
+
+
+<div class="banner">
+  <!-- Slide 1: Servicios -->
+  <div class="banner-content active">
+    <img src={banner3.src} alt="Servicios Inmobiliarios">
+    <div class="overlay"></div>
+    <h1 class="banner-title">Soluciones Inmobiliarias Integrales</h1>
+    <p class="banner-description">
+      Corretaje · Administración · Arquitectura · Servicios Legales · Obras Civiles
+    </p>
+    <a style="text-decoration: none;" class="banner-button" href="servicios">Ver servicios</a>
+  </div>
+  <!-- Slide 2: Arquitectura y Obras -->
+  <div class="banner-content">
+    <img src={banner4.src} alt="Arquitectura y Construcción">
+    <div class="overlay"></div>
+    <h1 class="banner-title">Arquitectura y Construcción</h1>
+    <p class="banner-description">
+      Diseño arquitectónico y ejecución de obras civiles con los más altos estándares
+    </p>
+    <a style="text-decoration: none;" class="banner-button" href="servicios/arquitectura">Conoce más</a>
+  </div>
+  <!-- Slide 3: Asesoría -->
+  <div class="banner-content">
+    <img src={banner2.src} alt="Asesoría Integral">
+    <div class="overlay"></div>
+    <h1 class="banner-title">Asesoría Integral</h1>
+    <p class="banner-description">
+      Corretaje inmobiliario y servicios legales especializados
+    </p>
+    <a class="banner-button" style="text-decoration: none;" href="contacto">Contáctanos</a>
+  </div>
+  <button class="banner-arrow left" aria-label="Anterior slide"><i class="fas fa-chevron-left"></i></button>
+  <button class="banner-arrow right" aria-label="Siguiente slide"><i class="fas fa-chevron-right"></i></button>
+  <div class="banner-nav"></div>
+</div>
+
+<style>
+  .banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  @media (min-width: 576px) {
+    .banner {
+      height: 500px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .banner {
+      height: 600px;
+    }
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    color: white;
+    padding: 0 5%;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .banner-content.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .banner-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    z-index: -2;
+    transform: scale(1.1);
+    transition: transform 0.8s ease;
+  }
+
+  .banner-content:nth-child(1) img {
+    object-position: center 70%;
+  }
+
+  .banner-content:nth-child(2) img {
+    object-position: center 65%;
+  }
+
+  .banner-content:nth-child(3) img {
+    object-position: center 75%;
+  }
+
+  .banner-content.active img {
+    transform: scale(1);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: -1;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.2s;
+  }
+
+  .banner-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.4s;
+  }
+
+  .banner-button {
+    background: #ff5630;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+
+  .banner-button:hover {
+    background: #d84315;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .banner-content.active .banner-title,
+  .banner-content.active .banner-description,
+  .banner-content.active .banner-button {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .banner-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 12px;
+  }
+
+  .banner-nav button {
+    background-color: rgba(255,255,255,0.3);
+    border: 2px solid rgba(255,255,255,0.5);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .banner-nav button:hover {
+    background-color: rgba(255,255,255,0.5);
+  }
+
+  .banner-nav button.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+
+  .banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.12);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  .banner-arrow:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #003B73;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .banner-arrow.left {
+    left: 20px;
+  }
+
+  .banner-arrow.right {
+    right: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .banner-arrow {
+      display: flex;
+    }
+    .banner-title {
+      font-size: 3.5rem;
+    }
+    .banner-description {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .banner-title {
+      font-size: 4rem;
+    }
+    .banner-description {
+      font-size: 1.6rem;
+    }
+    .banner-content {
+      padding: 0 10%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .banner-content img {
+      object-position: center 85% !important;
+    }
+  }
+</style>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bannerContents = document.querySelectorAll('.banner-content');
+    const bannerNav = document.querySelector('.banner-nav');
+    const leftArrow = document.querySelector('.banner-arrow.left');
+    const rightArrow = document.querySelector('.banner-arrow.right');
+    let currentSlide = 0;
+    let intervalId: number | undefined;
+
+    if (bannerNav) {
+      bannerContents.forEach((_, index) => {
+        const button = document.createElement('button');
+        button.setAttribute('aria-label', `Ir al slide ${index + 1}`);
+        button.addEventListener('click', () => goToSlide(index));
+        bannerNav.appendChild(button);
+      });
+    }
+
+    function updateBanner() {
+      bannerContents.forEach((content, index) => {
+        content.classList.toggle('active', index === currentSlide);
+      });
+      document.querySelectorAll('.banner-nav button').forEach((button, index) => {
+        button.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function goToSlide(n: number) {
+      currentSlide = n;
+      updateBanner();
+      resetInterval();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % bannerContents.length;
+      updateBanner();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + bannerContents.length) % bannerContents.length;
+      updateBanner();
+    }
+
+    function resetInterval() {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+      intervalId = window.setInterval(nextSlide, 5000);
+    }
+
+    if (leftArrow) {
+      leftArrow.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+      });
+    }
+
+    if (rightArrow) {
+      rightArrow.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+      });
+    }
+
+    resetInterval();
+  });
+</script>

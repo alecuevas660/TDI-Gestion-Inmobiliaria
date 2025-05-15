@@ -1,0 +1,178 @@
+---
+import { Image } from 'astro:assets';
+import corretajeImg from '../assets/img/corretaje.jpg';
+import arquitecturaImg from '../assets/img/arquitectura.jpg';
+import legalesImg from '../assets/img/legales.jpg';
+import obrasImg from '../assets/img/obras.jpg';
+
+const services = [
+  {
+    title: "Corretaje y Administración",
+    description: "Gestión integral de compra, venta y arriendo de propiedades, además de administración profesional de inmuebles.",
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104368/corretaje_xz3tsy.png"
+  },
+  {
+    title: "Arquitectura",
+    description: "Diseño arquitectónico, remodelaciones y proyectos personalizados para tu propiedad.",
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104367/arquitectura_h5e6ym.webp"
+  },
+  {
+    title: "Servicios Legales",
+    description: "Asesoría legal especializada en bienes raíces, contratos y regularización de propiedades.",
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104366/servicios-legales_boogab.jpg"
+  },
+  {
+    title: "Obras Civiles",
+    description: "Construcción, ampliaciones y mejoras de infraestructura con altos estándares de calidad.",
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104365/obrasciviles_tovxvp.jpg"
+  }
+];
+---
+
+<section class="services-section py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold custom-title-color mb-2 fade-in-up">Servicios por Categoría</h2>
+    <div class="title-underline custom-underline-color fade-in-up mb-5"></div>
+
+    <div class="row g-4 justify-content-center">
+      {services.map((service, index) => (
+        <div class="col-12 col-md-6">
+          <div class="service-card position-relative overflow-hidden rounded fade-in-up" data-delay={index * 200}>
+            <img 
+              src={service.image}
+              alt={service.title}
+              width={600}
+              height={350}
+              class="img-fluid w-100 h-100 object-fit-cover"
+              loading="lazy"
+            />
+            <div class="service-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+              <h3 class="fw-bold text-white mb-1 service-title-large">{service.title}</h3>
+              <p class="service-description mt-2">{service.description}</p>
+              <a class="service-btn mt-3" href="/servicios">Ver más</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background-color: #fff;
+  }
+  .custom-title-color {
+    color: #003B73 !important;
+  }
+  .service-card {
+    height: 300px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .service-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  }
+  .service-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 1;
+    transition: background 0.3s;
+  }
+  .service-card:hover .service-overlay {
+    background: rgba(0,0,0,0.60);
+  }
+  .service-title-large {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .service-description {
+    color: #fff;
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.13);
+  }
+  .service-btn {
+    background: #ff5630;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+    border: none;
+  }
+  .service-btn:hover {
+    background: #d84315;
+    color: #fff;
+  }
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: #003B73;
+    margin: 0 auto;
+    position: relative;
+  }
+  .title-underline.custom-underline-color::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #003B73;
+    right: -50px;
+    opacity: 0.5;
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (max-width: 767px) {
+    .service-card {
+      height: 220px;
+    }
+    .service-title-large {
+      font-size: 1.3rem;
+    }
+    .service-description {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const el = entry.target as HTMLElement;
+          if (el.dataset.delay) {
+            el.style.transitionDelay = `${el.dataset.delay}ms`;
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>

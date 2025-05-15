@@ -1,0 +1,463 @@
+---
+// ContactForm.astro
+---
+<section class="contact-section py-5 position-relative">
+  <!-- SVG decorativo superior -->
+  <div class="contact-wave-top">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,80 C360,160 1080,0 1440,80 L1440,0 L0,0 Z" fill="#003B73" fill-opacity="0.12"/>
+      <path d="M0,100 C400,0 1040,200 1440,60 L1440,0 L0,0 Z" fill="#ff5630" fill-opacity="0.07"/>
+    </svg>
+  </div>
+  <!-- Contenedor de notificaciones personalizado -->
+  <div id="custom-notification" class="custom-notification d-none"></div>
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold custom-title-color mb-2 fade-in-up">¡Contáctanos!</h2>
+          <div class="title-underline custom-underline-color fade-in-up"></div>
+          <p class="text-muted mt-4 fade-in-up">
+            Desarrollamos planes de asesorías a la medida de tus necesidades y de tu empresa. ¡Estamos emocionados de conectarnos contigo!
+          </p>
+        </div>
+
+        <div class="contact-form-fullwidth fade-in-up">
+          <form class="needs-validation pro-form pro-form-fullwidth" novalidate>
+            <div class="pro-form-group">
+              <label for="nombre">Nombre completo</label>
+              <input 
+                type="text" 
+                class="form-control form-control-lg" 
+                id="nombre" 
+                placeholder="Ej: Juan Pérez"
+                required
+              />
+            </div>
+            <div class="pro-form-group">
+              <label for="email">Correo electrónico</label>
+              <input 
+                type="email" 
+                class="form-control form-control-lg" 
+                id="email" 
+                placeholder="Ej: correo@ejemplo.com"
+                required
+              />
+            </div>
+            <div class="pro-form-group">
+              <label for="telefono">Teléfono</label>
+              <input 
+                type="tel" 
+                class="form-control form-control-lg" 
+                id="telefono" 
+                placeholder="Ej: +56 9 1234 5678"
+                required
+              />
+            </div>
+            <div class="pro-form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea 
+                class="form-control form-control-lg" 
+                id="mensaje" 
+                rows="5" 
+                placeholder="Cuéntanos sobre tu proyecto o requerimiento"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-custom pro-btn-submit btn-lg px-5" id="submit-button">
+                <span id="button-text">ENVIAR MENSAJE</span>
+                <span id="button-loader" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-wave-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 2;
+    pointer-events: none;
+    line-height: 0;
+  }
+  .contact-wave-top svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .custom-title-color {
+    color: #003B73 !important;
+  }
+
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: #003B73;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .title-underline::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #003B73;
+    right: -50px;
+    opacity: 0.5;
+  }
+
+  .contact-form-fullwidth {
+    width: 100%;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pro-form-fullwidth {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .form-control {
+    border: 2px solid #e9ecef;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0,59,115,0.1);
+    border-color: #003B73;
+    background-color: #ffffff;
+  }
+
+  .form-control::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+  }
+
+  .btn-custom {
+    background: #ff5630;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background: #d84315;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,86,48,0.3);
+  }
+
+  .btn-custom:active {
+    transform: translateY(0);
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  /* Estilos para la notificación personalizada */
+  .custom-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    min-width: 300px;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .custom-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .custom-notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .custom-notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+
+  @media (max-width: 991px) {
+    .contact-section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .contact-form-fullwidth, .pro-form-fullwidth {
+      max-width: 100vw;
+      padding: 0 0.5rem 1.5rem 0.5rem;
+    }
+    .custom-title-color {
+      font-size: 2rem !important;
+    }
+    .title-underline {
+      width: 50px;
+      height: 3px;
+    }
+    .contact-wave-top {
+      height: 40px;
+    }
+    .pro-form-group label {
+      font-size: 1rem;
+    }
+    .pro-form-group input,
+    .pro-form-group textarea {
+      font-size: 1rem;
+      padding: 0.8rem 0.7rem;
+    }
+    .pro-btn-submit {
+      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+    }
+    .contact-card {
+      padding: 1.2rem 0.5rem;
+      max-width: 98vw;
+    }
+  }
+  @media (max-width: 767px) {
+    .contact-section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .contact-form-fullwidth, .pro-form-fullwidth {
+      max-width: 100vw;
+      padding: 0 0.2rem 1rem 0.2rem;
+    }
+    .custom-title-color {
+      font-size: 1.3rem !important;
+    }
+    .title-underline {
+      width: 30px;
+      height: 2px;
+    }
+    .contact-wave-top {
+      height: 25px;
+    }
+    .pro-form-group label {
+      font-size: 0.97rem;
+    }
+    .pro-form-group input,
+    .pro-form-group textarea {
+      font-size: 0.97rem;
+      padding: 0.7rem 0.5rem;
+    }
+    .pro-btn-submit {
+      font-size: 0.97rem;
+      padding: 0.7rem 0.7rem;
+    }
+  }
+
+  .pro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .pro-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .pro-form-group label {
+    font-weight: 600;
+    color: #003B73;
+    font-size: 1.08rem;
+    margin-bottom: 0.1rem;
+    letter-spacing: 0.01em;
+  }
+  .pro-form-group input,
+  .pro-form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    border: 1.7px solid #e0e6ed;
+    font-size: 1.08rem;
+    color: #1A2B3C;
+    background: #f8f9fa;
+    transition: border 0.3s, box-shadow 0.3s;
+    outline: none;
+    margin-bottom: 0.1rem;
+    resize: vertical;
+    font-family: inherit;
+  }
+  .pro-form-group input:focus,
+  .pro-form-group textarea:focus {
+    border-color: #2a7cf7;
+    box-shadow: 0 0 0 2px rgba(42,124,247,0.13);
+    background: #fff;
+  }
+  .pro-btn-submit {
+    background: #ff5630;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 8px 24px rgba(255,159,67,0.13);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: 0.01em;
+  }
+  .pro-btn-submit:hover {
+    background: #2a7cf7;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(42,77,110,0.15);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Función para mostrar la notificación personalizada
+    function showNotification(message, type) {
+      const notification = document.getElementById('custom-notification');
+      notification.textContent = message;
+      // Asigna la clase adecuada según el tipo (success o error)
+      notification.className = 'custom-notification show ' + (type === 'error' ? 'error' : 'success');
+      // Oculta la notificación después de 3 segundos
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    // Animación de fade-in
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // Validación del formulario
+    const forms = document.querySelectorAll('.needs-validation');
+    forms.forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+
+    // Envío del formulario y envío del correo
+    const form = document.querySelector('.needs-validation');
+    const submitButton = document.getElementById('submit-button');
+    const buttonText = document.getElementById('button-text');
+    const buttonLoader = document.getElementById('button-loader');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) return;
+
+      // Mostrar loader y deshabilitar botón
+      submitButton.disabled = true;
+      buttonText.classList.add('d-none');
+      buttonLoader.classList.remove('d-none');
+
+      const data = {
+        name: form.querySelector('#nombre').value,
+        email: form.querySelector('#email').value,
+        telefono: form.querySelector('#telefono').value,
+        mensaje: form.querySelector('#mensaje').value
+      };
+
+      try {
+        const response = await fetch('http://localhost:3000/contacto/contacto', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        if (result.success) {
+          showNotification('Mensaje enviado correctamente.', 'success');
+          form.reset();
+        } else {
+          showNotification('Error: ' + result.error, 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        showNotification('Ocurrió un error al enviar el mensaje.', 'error');
+      } finally {
+        // Ocultar loader y reactivar botón
+        submitButton.disabled = false;
+        buttonText.classList.remove('d-none');
+        buttonLoader.classList.add('d-none');
+      }
+    });
+  });
+</script>
