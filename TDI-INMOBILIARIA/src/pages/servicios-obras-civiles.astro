@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import Foto1 from '../assets/img/servicios_obras1.jpg';
+import Foto2 from '../assets/img/servicios_obras2.jpg';
+import Foto3 from '../assets/img/servicios_obras3.jpg';
+import Foto4 from '../assets/img/servicios_obras4.jpg';
 const title = "Obras Civiles - TDI Inmobiliaria";
 const description = "Gestión profesional y transparente de tu propiedad. Nos encargamos de todo: arriendo, mantención, cobros y más. Vive tranquilo, tu inversión está en buenas manos.";
 ---
@@ -43,7 +48,7 @@ const description = "Gestión profesional y transparente de tu propiedad. Nos en
           </ul>
         </div>
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Administración de propiedades" class="img-fluid rounded-3 shadow">
+          <Image src={Foto1} alt="Administración de propiedades" class="img-fluid rounded-3 shadow"/>
         </div>
       </div>
     </div>
@@ -86,35 +91,53 @@ const description = "Gestión profesional y transparente de tu propiedad. Nos en
 
   <section class="section-padding bg-light animate">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Galería de la Administración</h2>
+      <h2 class="text-center fw-bold mb-5">Experiencias que Construimos</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Inspección de propiedad" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Inspección y entrega</h4>
-              <p class="mb-0 text-muted">Verificamos el estado de tu propiedad antes y después de cada arriendo.</p>
+            <Image src={Foto2} alt="Proyecto de construcción" class="img-fluid rounded-top"/>
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Excelencia en Construcción</h4>
+              <p class="mb-3 text-muted">Tu proyecto merece lo mejor:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Calidad garantizada</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Materiales premium</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Durabilidad comprobada</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Mantenimiento y reparaciones" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Mantenimiento y reparaciones</h4>
-              <p class="mb-0 text-muted">Nos ocupamos de que todo funcione bien y tu inversión se mantenga en óptimas condiciones.</p>
+            <Image src={Foto3} alt="Supervisión de obra" class="img-fluid rounded-top"/>
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Supervisión Experta</h4>
+              <p class="mb-3 text-muted">Nos ocupamos de cada detalle:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Control de calidad</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Seguridad garantizada</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Eficiencia en tiempo</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Comunicación y reportes" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Comunicación y reportes</h4>
-              <p class="mb-0 text-muted">Te mantenemos informado con reportes claros y comunicación directa.</p>
+            <Image src={Foto4} alt="Proyecto terminado" class="img-fluid rounded-top"/>
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Resultados Excepcionales</h4>
+              <p class="mb-3 text-muted">Tu satisfacción es nuestra meta:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Proyectos exitosos</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Clientes satisfechos</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Compromiso total</li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <p class="lead">Construimos sueños con excelencia y dedicación. Tu proyecto merece el mejor equipo.</p>
       </div>
     </div>
   </section>
@@ -146,10 +169,10 @@ const description = "Gestión profesional y transparente de tu propiedad. Nos en
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
   }
   .hero-bg-img {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('../assets/img/servicios_obras1.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.18;
+    opacity: 0.65;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;

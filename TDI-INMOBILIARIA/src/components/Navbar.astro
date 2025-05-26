@@ -34,13 +34,16 @@ const carouselItems = [
 ---
 
 <header class="header">
-  <div id="carouselTopBar" class="carousel slide top-bar" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      {carouselItems.map((item, index) => (
-        <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
-          <p>{item.icon} {item.text}</p>
-        </div>
-      ))}
+  <div class="top-bar">
+    <div class="container topbar-contact-info">
+      <a href="mailto:contacto@tdigestion.com" class="topbar-link"><i class="bi bi-envelope"></i> contacto@tdigestion.com</a>
+      <span class="topbar-sep">|</span>
+      <a href="tel:+56987260572" class="topbar-link"><i class="bi bi-telephone"></i> +56 9 8726 0572</a>
+      <span class="topbar-sep">|</span>
+      <a href="https://maps.google.com/?q=O%27Higgins+1186,+Of.+1202,+Concepción" target="_blank" rel="noopener noreferrer" class="topbar-link"><i class="bi bi-geo-alt"></i> O'Higgins 1186 Of. 1202, Concepción</a>
+      <span class="topbar-sep">|</span>
+      <a href="https://instagram.com/Tdigestioninmobiliaria" target="_blank" rel="noopener noreferrer" class="topbar-link"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com/Tdigestioninmobiliaria" target="_blank" rel="noopener noreferrer" class="topbar-link"><i class="bi bi-facebook"></i></a>
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm animate__animated animate__fadeInDown">
@@ -113,42 +116,44 @@ const carouselItems = [
     width: 100%;
     z-index: 1000;
     background: linear-gradient(90deg, #003B73 0%, #1a4b8c 100%);
-    padding: 10px 0;
+    padding: 8px 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
-  .top-bar .carousel-item p {
-    color: white;
-    margin: 0;
-    font-size: 0.95rem;
+  .topbar-contact-info {
     display: flex;
     align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    font-size: 0.98rem;
+  }
+
+  .topbar-link {
+    color: #fff;
+    text-decoration: none;
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.2s;
   }
 
-  .top-bar .carousel-item p::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+  .topbar-link:hover {
+    color: #1fd1c7;
+    text-decoration: underline;
   }
 
-  .top-bar .carousel-item p:hover {
-    opacity: 0.9;
+  .topbar-link i {
+    font-size: 1.1rem;
+    vertical-align: middle;
   }
 
-  .top-bar .carousel-item p:hover::after {
-    width: 80%;
+  .topbar-sep {
+    color: #b3e0f7;
+    margin: 0 0.3rem;
+    font-size: 1.1em;
+    user-select: none;
   }
 
   .navbar {
@@ -462,8 +467,12 @@ const carouselItems = [
     .logo-subtext {
       font-size: 0.875rem;
     }
-    .top-bar .carousel-item p {
-      font-size: 0.8rem;
+    .topbar-contact-info {
+      font-size: 0.85rem;
+      gap: 0.3rem;
+    }
+    .topbar-sep {
+      margin: 0 0.15rem;
     }
   }
 

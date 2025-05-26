@@ -1,5 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import Foto1 from '../assets/img/corretaje_page1.png';
+import Foto2 from '../assets/img/corretaje_page2.jpg';
+import Foto3 from '../assets/img/corretaje_page3.jpg';
+import Foto4 from '../assets/img/corretaje_page4.jpg';
+import Foto5 from '../assets/img/corretaje_page5.jpg';
 const title = "Corretaje y Administración de Propiedades - TDI Inmobiliaria";
 const description = "Gestión profesional de compra, venta y arriendo de propiedades. Descubre cómo nuestro servicio de corretaje te acompaña en cada paso para lograr tus objetivos inmobiliarios con confianza y tranquilidad.";
 ---
@@ -10,9 +16,9 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
       <h1 class="display-4 fw-bold mb-4">Corretaje y Administración</h1>
       <p class="lead mb-4">Acompañamos tu historia inmobiliaria con profesionalismo, cercanía y resultados.</p>
       <div class="d-flex justify-content-center gap-3">
-        <button class="btn btn-primary btn-lg" onclick="window.location.href='/contacto'">
+        <a href="/contacto" class="btn btn-primary btn-lg">
           Solicitar Asesoría
-        </button>
+        </a>
       </div>
     </div>
     <div class="hero-bg-img"></div>
@@ -43,7 +49,7 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
           </ul>
         </div>
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Corretaje y administración" class="img-fluid rounded-3 shadow">
+          <Image src={Foto3} alt="Corretaje y administración" class="img-fluid rounded-3 shadow" />
         </div>
       </div>
     </div>
@@ -86,35 +92,53 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
 
   <section class="section-padding bg-light animate">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Galería de Momentos</h2>
+      <h2 class="text-center fw-bold mb-5">Experiencias que Construimos Juntos</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Entrega de llaves" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Entrega de llaves</h4>
-              <p class="mb-0 text-muted">El momento más esperado: la felicidad de recibir tu nuevo hogar.</p>
+            <Image src={Foto2} alt="Entrega de llaves" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">El Momento de la Entrega</h4>
+              <p class="mb-3 text-muted">Celebramos contigo la realización de tu sueño inmobiliario:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Emoción de recibir tu nuevo hogar</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Satisfacción de un proceso exitoso</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Comienzo de una nueva etapa</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Visitas guiadas" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Visitas guiadas</h4>
-              <p class="mb-0 text-muted">Te acompañamos en cada recorrido para que tomes la mejor decisión.</p>
+            <Image src={Foto4} alt="Visitas guiadas" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Descubriendo tu Futuro Hogar</h4>
+              <p class="mb-3 text-muted">Cada visita es una oportunidad para imaginar nuevas posibilidades:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Visualización de espacios y potencial</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Exploración de vecindarios</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Encuentro con tu próxima comunidad</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1556740772-1a741367b93e?auto=format&fit=crop&w=800&q=80" alt="Asesoría y respaldo" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Asesoría y respaldo</h4>
-              <p class="mb-0 text-muted">Siempre a tu lado, resolviendo dudas y asegurando tu tranquilidad.</p>
+            <Image src={Foto5} alt="Asesoría y respaldo" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Confianza y Tranquilidad</h4>
+              <p class="mb-3 text-muted">Construimos relaciones duraderas basadas en la confianza:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Compañía en cada decisión</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Respaldo en momentos importantes</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Relación más allá de la transacción</li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <p class="lead">Más que un servicio inmobiliario, somos parte de tu historia y crecimiento.</p>
       </div>
     </div>
   </section>
@@ -123,7 +147,7 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
     <div class="container text-center">
       <h2 class="fw-bold mb-4">¿Listo para comenzar tu historia inmobiliaria?</h2>
       <p class="lead mb-4">Déjanos acompañarte en cada paso. Nuestro equipo está listo para ayudarte a comprar, vender o arrendar con confianza y seguridad.</p>
-      <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos</a>
+        <a href="/contacto" class="btn btn-primary mt-3">Comienza tu historia con nosotros</a>
     </div>
   </section>
 </Layout>
@@ -146,13 +170,15 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
   }
   .hero-bg-img {
-    background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('../assets/img/corretaje_page1.png');
     background-size: cover;
-    background-position: center;
-    opacity: 0.18;
+    background-position: center 10%;
+    opacity: 0.55;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;
+    transform: scale(1.2);
+    background-repeat: no-repeat;
   }
   .hero-content {
     position: relative;
@@ -222,7 +248,7 @@ const description = "Gestión profesional de compra, venta y arriendo de propied
   }
 </style>
 
-<script client:load>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         // Animate elements on scroll using IntersectionObserver
         const animatedElements = document.querySelectorAll('.animate');

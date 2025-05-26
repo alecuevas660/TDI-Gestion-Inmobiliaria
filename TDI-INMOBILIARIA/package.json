@@ -1,13 +1,14 @@
 {
   "name": "conecta-astro-app",
-  "type": "commonjs",
+  "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
+ "scripts": {
+  "dev": "astro dev",
+  "build": "astro build",
+  "preview": "astro preview",
+  "astro": "astro",
+  "start": "node server.js"
+},
   "dependencies": {
     "@astrojs/node": "^9.1.2",
     "aos": "^2.3.4",

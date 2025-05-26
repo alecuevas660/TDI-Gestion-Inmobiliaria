@@ -1,11 +1,13 @@
 ---
-import Proveedores from '../assets/img/busqueda-proveedores.jpg';
-import Transporte from '../assets/img/busqueda-transporte.jpg';
-import Internacion from '../assets/img/busqueda-asesor.jpg';
-import Externalizacion from '../assets/img/busqueda-externalizacion.jpg';
-import HeroBackground from '../assets/img/hero-background.jpg'; // Importa la imagen de fondo
-import Layout from '../layouts/Layout.astro';
 
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import foto1 from '../assets/img/arquitectura_page1.jpg';
+import foto2 from '../assets/img/arquitectura_image.jpg';
+import foto3 from '../assets/img/arquitectura_page2.jpg';
+import foto4 from '../assets/img/arquitectura_page5.jpg';
+import foto5 from '../assets/img/arquitectura_page4.jpg';
 const title = "Arquitectura y Diseño - TDI Inmobiliaria";
 const description = "Transformamos espacios con creatividad, profesionalismo y pasión. Descubre cómo nuestro equipo de arquitectura puede hacer realidad tu proyecto, desde el diseño hasta la remodelación y construcción.";
 
@@ -49,8 +51,8 @@ const description = "Transformamos espacios con creatividad, profesionalismo y p
           </ul>
         </div>
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Arquitectura y diseño" class="img-fluid rounded-3 shadow">
-        </div>
+              <Image src={foto2} alt="Arquitectura y diseño" class="img-fluid rounded-3 shadow">
+            </div>
       </div>
     </div>
   </section>
@@ -92,35 +94,53 @@ const description = "Transformamos espacios con creatividad, profesionalismo y p
 
   <section class="section-padding bg-light animate">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Galería de Proyectos</h2>
+      <h2 class="text-center fw-bold mb-5">Experiencias que Diseñamos</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Remodelación de espacios" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Remodelación de espacios</h4>
-              <p class="mb-0 text-muted">Transformamos ambientes antiguos en lugares modernos y funcionales.</p>
+            <Image src={foto3} alt="Remodelación de espacios" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Transformación de Espacios</h4>
+              <p class="mb-3 text-muted">Cada proyecto es una oportunidad para crear algo único:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Renovación con propósito</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Espacios que inspiran</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Diseño con significado</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80" alt="Diseño arquitectónico" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Diseño arquitectónico</h4>
-              <p class="mb-0 text-muted">Creamos proyectos únicos, adaptados a tus necesidades y estilo de vida.</p>
+            <Image src={foto5} alt="Diseño arquitectónico" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Creatividad en Acción</h4>
+              <p class="mb-3 text-muted">Convertimos tus sueños en realidad:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Proyectos personalizados</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Soluciones innovadoras</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Diseño que emociona</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-card h-100">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Supervisión de obra" class="img-fluid rounded-top">
-            <div class="p-3">
-              <h4 class="fw-bold mb-2">Supervisión de obra</h4>
-              <p class="mb-0 text-muted">Aseguramos calidad y cumplimiento en cada etapa de la construcción.</p>
+            <Image src={foto4} alt="Supervisión de obra" class="img-fluid rounded-top" />
+            <div class="p-4">
+              <h4 class="fw-bold mb-3">Excelencia en Detalles</h4>
+              <p class="mb-3 text-muted">Nos apasiona la perfección en cada detalle:</p>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Calidad garantizada</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Atención meticulosa</li>
+                <li class="mb-2"><i class="bi bi-heart-fill text-primary me-2"></i>Resultados excepcionales</li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <p class="lead">Cada proyecto es una historia única. Nosotros la diseñamos, tú la vives.</p>
       </div>
     </div>
   </section>
@@ -152,10 +172,10 @@ const description = "Transformamos espacios con creatividad, profesionalismo y p
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
   }
   .hero-bg-img {
-    background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('../assets/img/arquitectura_page1.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.18;
+    opacity: 0.65;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;

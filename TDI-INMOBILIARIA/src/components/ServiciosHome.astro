@@ -9,22 +9,26 @@ const services = [
   {
     title: "Corretaje y Administración",
     description: "Gestión integral de compra, venta y arriendo de propiedades, además de administración profesional de inmuebles.",
-    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104368/corretaje_xz3tsy.png"
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104368/corretaje_xz3tsy.png",
+    url: "/servicios-corretaje"
   },
   {
     title: "Arquitectura",
     description: "Diseño arquitectónico, remodelaciones y proyectos personalizados para tu propiedad.",
-    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104367/arquitectura_h5e6ym.webp"
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104367/arquitectura_h5e6ym.webp",
+    url: "/servicios-arquitectura"
   },
   {
     title: "Servicios Legales",
     description: "Asesoría legal especializada en bienes raíces, contratos y regularización de propiedades.",
-    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104366/servicios-legales_boogab.jpg"
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104366/servicios-legales_boogab.jpg",
+    url: "/servicios-legales"
   },
   {
     title: "Obras Civiles",
     description: "Construcción, ampliaciones y mejoras de infraestructura con altos estándares de calidad.",
-    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104365/obrasciviles_tovxvp.jpg"
+    image: "https://res.cloudinary.com/dscyapo0j/image/upload/v1747104365/obrasciviles_tovxvp.jpg",
+    url: "/servicios-obras-civiles"
   }
 ];
 ---
@@ -49,7 +53,7 @@ const services = [
             <div class="service-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
               <h3 class="fw-bold text-white mb-1 service-title-large">{service.title}</h3>
               <p class="service-description mt-2">{service.description}</p>
-              <a class="service-btn mt-3" href="/servicios">Ver más</a>
+              <a class="service-btn mt-3" href={service.url}>Ver más</a>
             </div>
           </div>
         </div>

@@ -420,7 +420,12 @@
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!form.checkValidity()) return;
+      console.log('Form submission started');
+      
+      if (!form.checkValidity()) {
+        console.log('Form validation failed');
+        return;
+      }
 
       // Mostrar loader y deshabilitar botón
       submitButton.disabled = true;
@@ -434,23 +439,39 @@
         mensaje: form.querySelector('#mensaje').value
       };
 
+      console.log('Sending contact form data:', { ...data, mensaje: data.mensaje.substring(0, 50) + '...' });
+
       try {
-        const response = await fetch('http://localhost:3000/contacto/contacto', {
+        console.log('Making API request to /api/contacto/contact');
+        const response = await fetch('http://localhost:3000/api/contacto/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
         });
+        
+        console.log('API Response status:', response.status);
+        console.log('API Response headers:', Object.fromEntries(response.headers.entries()));
+        
         const result = await response.json();
+        console.log('API Response body:', result);
+
         if (result.success) {
+          console.log('Contact form submitted successfully');
           showNotification('Mensaje enviado correctamente.', 'success');
           form.reset();
         } else {
+          console.error('Contact form submission failed:', result.error);
           showNotification('Error: ' + result.error, 'error');
         }
       } catch (err) {
-        console.error(err);
+        console.error('Error during contact form submission:', err);
+        console.error('Error details:', {
+          name: err.name,
+          message: err.message,
+          stack: err.stack
+        });
         showNotification('Ocurrió un error al enviar el mensaje.', 'error');
       } finally {
         // Ocultar loader y reactivar botón
