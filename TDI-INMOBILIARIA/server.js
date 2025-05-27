@@ -77,4 +77,4 @@ setupAstro().then(astroHandler => {
   console.error('Error al cargar Astro:', error);
   process.exit(1);
 });
-
+ 
